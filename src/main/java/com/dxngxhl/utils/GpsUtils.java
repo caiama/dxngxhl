@@ -1,11 +1,13 @@
+package com.dxngxhl.utils;
+
 public class GpsUtils {
 
     private static double x_pi = 3.14159265358979324 * 3000.0 / 180.0;
-    // ¦Ğ
+    // Ï€
     private static double pi = 3.1415926535897932384626;
-    // ³¤°ëÖá
+    // é•¿åŠè½´
     private static double a = 6378245.0;
-    // ±âÂÊ
+    // æ‰ç‡
     private static double ee = 0.00669342162296594323;
 
     public static boolean out_of_china(double lon, double lat) {
@@ -34,11 +36,11 @@ public class GpsUtils {
     }
 
     /**
-     * WGS84×ªGCJ02(»ğĞÇ×ø±êÏµ)
+     * WGS84è½¬GCJ02(ç«æ˜Ÿåæ ‡ç³»)
      *
-     * @param wgs_lon WGS84×ø±êÏµµÄ¾­¶È
-     * @param wgs_lat WGS84×ø±êÏµµÄÎ³¶È
-     * @return »ğĞÇ×ø±êÊı×é
+     * @param wgs_lon WGS84åæ ‡ç³»çš„ç»åº¦
+     * @param wgs_lat WGS84åæ ‡ç³»çš„çº¬åº¦
+     * @return ç«æ˜Ÿåæ ‡æ•°ç»„
      */
     public static double[] wgs84togcj02(double wgs_lon, double wgs_lat) {
         if (out_of_china(wgs_lon, wgs_lat)) {
@@ -58,11 +60,11 @@ public class GpsUtils {
     }
 
     /**
-     * GCJ02(»ğĞÇ×ø±êÏµ)×ªGPS84
+     * GCJ02(ç«æ˜Ÿåæ ‡ç³»)è½¬GPS84
      *
-     * @param gcj_lon »ğĞÇ×ø±êÏµµÄ¾­¶È
-     * @param gcj_lat »ğĞÇ×ø±êÏµÎ³¶È
-     * @return WGS84×ø±êÊı×é
+     * @param gcj_lon ç«æ˜Ÿåæ ‡ç³»çš„ç»åº¦
+     * @param gcj_lat ç«æ˜Ÿåæ ‡ç³»çº¬åº¦
+     * @return WGS84åæ ‡æ•°ç»„
      */
     public static double[] gcj02towgs84(double gcj_lon, double gcj_lat) {
         if (out_of_china(gcj_lon, gcj_lat)) {
@@ -83,12 +85,12 @@ public class GpsUtils {
 
 
     /**
-     * »ğĞÇ×ø±êÏµ(GCJ-02)×ª°Ù¶È×ø±êÏµ(BD-09)
+     * ç«æ˜Ÿåæ ‡ç³»(GCJ-02)è½¬ç™¾åº¦åæ ‡ç³»(BD-09)
      *
-     * ¹È¸è¡¢¸ßµÂ¡ª¡ª>°Ù¶È
-     * @param gcj_lon »ğĞÇ×ø±ê¾­¶È
-     * @param gcj_lat »ğĞÇ×ø±êÎ³¶È
-     * @return °Ù¶È×ø±êÊı×é
+     * è°·æ­Œã€é«˜å¾·â€”â€”>ç™¾åº¦
+     * @param gcj_lon ç«æ˜Ÿåæ ‡ç»åº¦
+     * @param gcj_lat ç«æ˜Ÿåæ ‡çº¬åº¦
+     * @return ç™¾åº¦åæ ‡æ•°ç»„
      */
     public static double[] gcj02tobd09(double gcj_lon, double gcj_lat) {
         double z = Math.sqrt(gcj_lon * gcj_lon + gcj_lat * gcj_lat) + 0.00002 * Math.sin(gcj_lat * x_pi);
@@ -99,12 +101,12 @@ public class GpsUtils {
     }
 
     /**
-     * °Ù¶È×ø±êÏµ(BD-09)×ª»ğĞÇ×ø±êÏµ(GCJ-02)
+     * ç™¾åº¦åæ ‡ç³»(BD-09)è½¬ç«æ˜Ÿåæ ‡ç³»(GCJ-02)
      *
-     * °Ù¶È¡ª¡ª>¹È¸è¡¢¸ßµÂ
-     * @param bd_lon °Ù¶È×ø±êÎ³¶È
-     * @param bd_lat °Ù¶È×ø±ê¾­¶È
-     * @return »ğĞÇ×ø±êÊı×é
+     * ç™¾åº¦â€”â€”>è°·æ­Œã€é«˜å¾·
+     * @param bd_lon ç™¾åº¦åæ ‡çº¬åº¦
+     * @param bd_lat ç™¾åº¦åæ ‡ç»åº¦
+     * @return ç«æ˜Ÿåæ ‡æ•°ç»„
      */
     public static double[] bd09togcj02(double bd_lon, double bd_lat) {
         double x = bd_lon - 0.0065;
@@ -117,11 +119,11 @@ public class GpsUtils {
     }
 
     /**
-     * WGS×ø±ê×ª°Ù¶È×ø±êÏµ(BD-09)
+     * WGSåæ ‡è½¬ç™¾åº¦åæ ‡ç³»(BD-09)
      *
-     * @param wgs_lng WGS84×ø±êÏµµÄ¾­¶È
-     * @param wgs_lat WGS84×ø±êÏµµÄÎ³¶È
-     * @return °Ù¶È×ø±êÊı×é
+     * @param wgs_lng WGS84åæ ‡ç³»çš„ç»åº¦
+     * @param wgs_lat WGS84åæ ‡ç³»çš„çº¬åº¦
+     * @return ç™¾åº¦åæ ‡æ•°ç»„
      */
     public static double[] wgs84tobd09(double wgs_lng, double wgs_lat) {
         double[] gcj = wgs84togcj02(wgs_lng, wgs_lat);
@@ -130,11 +132,11 @@ public class GpsUtils {
     }
 
     /**
-     * °Ù¶È×ø±êÏµ(BD-09)×ªWGS×ø±ê
+     * ç™¾åº¦åæ ‡ç³»(BD-09)è½¬WGSåæ ‡
      *
-     * @param bd_lng °Ù¶È×ø±êÎ³¶È
-     * @param bd_lat °Ù¶È×ø±ê¾­¶È
-     * @return WGS84×ø±êÊı×é
+     * @param bd_lng ç™¾åº¦åæ ‡çº¬åº¦
+     * @param bd_lat ç™¾åº¦åæ ‡ç»åº¦
+     * @return WGS84åæ ‡æ•°ç»„
      */
     public static double[] bd09towgs84(double bd_lng, double bd_lat) {
         double[] gcj = bd09togcj02(bd_lng, bd_lat);
