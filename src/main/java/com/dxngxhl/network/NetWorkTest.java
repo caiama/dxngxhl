@@ -5,4 +5,7 @@ package com.dxngxhl.network;
  */
 
 public class NetWorkTest {
+    public static void text(){
+
+    }
 }
