@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--扫描-->
+    <item android:id="@+id/title_menu_scan"
+    android:title="@string/title_scan"
+    android:visible="false"
+    android:icon="@drawable/ic_title_fullscreen"
+    app:showAsAction="ifRoom"/>
+    <!--
+    //id
+    //title长按显示的文字
+    //默认全部不显示
+    //图标
+    -->
+    <!--添加-->
+    <item android:id="@+id/title_menu_add"
+        android:title="@string/title_add"
+        android:icon="@drawable/ic_title_add"
+        app:showAsAction="ifRoom"/>
+    <!--设置-->
+    <item android:id="@+id/title_menu_setting"
+        android:title="@string/title_setting"
+        android:visible="false"
+        android:icon="@drawable/ic_title_settings"
+        app:showAsAction="ifRoom"/>
+    <!--搜索-->
+    <item android:id="@+id/title_menu_search"
+        android:title="@string/title_search"
+        android:visible="false"
+        android:icon="@drawable/ic_title_search"
+        app:showAsAction="ifRoom"/>
+    <!--刷新-->
+    <item android:id="@+id/title_menu_refresh"
+        android:title="@string/title_refresh"
+        android:visible="false"
+        android:icon="@drawable/ic_title_refresh"
+        app:showAsAction="ifRoom"/>
+    <!--<item android:id="@+id/title_more1"-->
+    <!--android:title="@string/right2"-->
+    <!--app:showAsAction="never"/>-->
+    <!--<item android:id="@+id/title_more2"-->
+    <!--android:title="@string/right2"-->
+    <!--app:showAsAction="never"/>-->
+</menu>

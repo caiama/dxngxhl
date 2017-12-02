@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">dxngxhl</string>
+    <string name="title_add">添加</string>
+    <string name="title_setting">设置</string>
+    <string name="title_search">搜索</string>
+    <string name="title_refresh">刷新</string>
+    <string name="title_scan">扫描</string>
 </resources>
